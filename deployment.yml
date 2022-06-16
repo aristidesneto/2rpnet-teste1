@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 2rpnet-teste1-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: 2rpnet-teste1-deployment
+  template:
+    metadata:
+      labels:
+        app: 2rpnet-teste1-deployment
+    spec:
+      containers:
+        - name: my-container
+          image: aristidesbneto/2rpnet-teste1:latest
+          env:
+            - name: TWORPTEST
+              valueFrom:
+                secretKeyRef:
+                  name: 2rpnet-secret
+                  key: TWORPTEST

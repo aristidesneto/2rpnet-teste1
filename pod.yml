@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 2rpnet-teste1-pod
+spec:
+  containers:
+  - name: 2rpnet-teste1-container
+    image: aristidesbneto/2rpnet-teste1:latest
